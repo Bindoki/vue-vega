@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <vega-lite
+    :data="[
+        {name: 'Hogar unipersonal', count: 4889.9},
+        {name: 'Hogar monoparental', count: 1944.8},
+        {name: 'Pareja sin hijos', count: 3913.8},
+        {name: 'Pareja con hijos: 1 hijo', count: 2889.2},
+        {name: 'Pareja con hijos: 2 hijos', count: 2756.7},
+        {name: 'Pareja con hijos: 3 o más hijos', count: 562.2},
+        {name: 'Núcleo familiar: no nucleo', count: 800.1},
+        {name: 'Personas que no forman ningún núcleo', count: 567.6},
+        {name: 'Dos o más núcleos familiares', count: 430.5}
+    ]"
+    mark="bar"
+    :encoding="{
+      x: {field: 'name', type: 'ordinal'},
+      y: {field: 'count', type: 'quantitative'}
+    }">
+  </vega-lite>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    })
+  </script>
+</body>
+</html>
